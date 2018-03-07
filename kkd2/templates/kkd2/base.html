@@ -1,0 +1,14 @@
+{% load staticfiles %}
+<head>
+<link rel="stylesheet" href="{% static 'css/common.css' %}">
+</head>
+
+<body>
+    <div class="page-header">
+        <h1><a href={% url 'index' %}>GO enrichment analysis results</a></h1>
+    </div>
+    <div class="content">
+            {% block content %}
+            {% endblock %}
+    </div>
+</body>

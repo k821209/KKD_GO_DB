@@ -1,0 +1,36 @@
+{% extends 'kkd2/base.html' %}
+
+{% block content %} 
+<h3> Input genes in selected GO </h3>
+    <div>
+        <table>
+         <tr>
+          <th class="linebreak"><p>user</p></th>
+          <th class="linebreak"><p>title</p></th>
+          <th class="linebreak"><p>Gene ID</p></th>
+          <th class="linebreak"><p>Transcript ID</p></th>
+          <th class="linebreak"><p>GO ID</p></th>
+          <th class="linebreak"><p>GO name</p></th>
+          <th class="linebreak"><p>NCBI GeneID</p></th>
+          <th class="linebreak"><p>Gene name</p></th>
+          <th class="linebreak"><p>Gene description</p></th>
+         </tr>
+         {% for eGene in Genes %}
+         <tr>
+          <td>{{eGene.user}}</td>
+          <td>{{eGene.title}}</td>
+          <td>{{eGene.Gene_stable_ID}}</td>
+          <td>{{eGene.Transcript_stable_ID_version}}</td>
+          <td>{{eGene.GO_term_accession}}</td>
+          <td>{{eGene.GO_term_name}}</td>
+          <td>{{eGene.NCBI_gene_ID}}</td>
+          <td>{{eGene.Gene_name}}</td>
+          <td>{{eGene.Gene_description}}</td>
+         </tr>
+         {% endfor %}
+        </table>
+    </div>
+
+
+</html>
+{% endblock %}

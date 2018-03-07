@@ -1,0 +1,30 @@
+{% extends 'kkd2/base.html' %}
+
+{% block content %}
+
+<h3> GO enrichment table</h3>
+    <div>
+        <table>
+         <tr>
+          <th class="linebreak"><p>user</p></th>
+          <th class="linebreak"><p>title</p></th>
+          <th class="linebreak"><p>GO</p></th>
+          <th class="linebreak"><p>Pvalue</p></th>
+          <th class="linebreak"><p>Odds</p></th>
+          <th class="linebreak"><p>name</p></th>
+          <th class="linebreak"><p>defin</p></th>
+         </tr>
+         {% for eGO in GOs %}
+         <tr>
+          <td>{{eGO.user}}</td>
+          <td>{{eGO.title}}</td>
+          <td><a href="{% url 'detail_gene' s_id_go=eGO.GO s_user=eGO.user s_title=eGO.title %}">{{eGO.GO}}</a></td>
+          <td>{{eGO.Pvalue}}</td>
+          <td>{{eGO.Odds}}</td>
+          <td>{{eGO.name}}</td>
+          <td>{{eGO.defin}}</td>
+         </tr>
+         {% endfor %}
+        </table>
+    </div>
+{% endblock %}

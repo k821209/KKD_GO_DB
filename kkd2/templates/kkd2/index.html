@@ -1,0 +1,12 @@
+{% extends 'kkd2/base.html' %}
+
+{% block content %} 
+GO enrichment analysis results list
+<ul>
+ {% for ID in IDs %}
+  <li><p><a href="{% url 'detail' s_id=ID  %}">{{ID}}</a></p></li>
+ {% endfor %}
+</ul>
+
+{% endblock %}
+
